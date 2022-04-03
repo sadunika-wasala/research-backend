@@ -5,7 +5,7 @@ mongoose.connect("mongodb+srv://research:research@researchproject.czt59.mongodb.
     useUnifiedTopology: true,
     useCreateIndex: true
 }).then(() => {
-    console.log(`connection is succsessfill`);
+    console.log(`connection is successful`);
 }).catch((e) => {
     console.log(`no connection`);
 })
