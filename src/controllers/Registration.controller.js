@@ -44,10 +44,14 @@ exports.results = async (req, res) => {
     // save results
     await new Results(results).save((err, data) => {
         if (err) {
+            console.log("failed to save result");
+            console.log(err)
             res.status(500).json({
                 message: "Something went wrong saving results, please try again later"
             });
         } else {
+            console.log("results saved")
+            console.log(data)
             res.status(200).json({
                 message: "Results stored successfuly",
                 data: { "user": data }
