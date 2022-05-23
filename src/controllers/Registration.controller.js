@@ -73,7 +73,7 @@ exports.results = async (req, res) => {
     const content = csv;
 
     //fs.writeFile('/Users/INSIGHT/Desktop/research/vc/research-backend/results/'+req.body.task+'_'+req.body.user+'_'+Date.now()+'.csv', content, { flag: 'w+' }, function (err) {
-    fs.writeFile('./results/'+req.body.task+'_'+req.body.user+'_'+Date.now()+'.csv', content, { flag: 'w+' }, function (err) {
+    fs.writeFile('./results/'+req.body.task+'_'+req.body.user+'_'+new Date().toLocaleString().replaceAll('/','-').replaceAll(':','-').replaceAll(', ','_').replaceAll(' ','_')+'.csv', content, { flag: 'w+' }, function (err) {
         if (err) throw err;
         console.log("It's saved!");
     });
@@ -98,7 +98,4 @@ exports.results = async (req, res) => {
         }
 
     });
-
-
-
 }
